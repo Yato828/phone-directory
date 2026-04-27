@@ -17,14 +17,14 @@ public class Main {
                 System.out.println(contact);
             }
 
-            dao.create("Анатолий", "Гончаров", "Владимирович", "+375-29-887-99-76", "1991-11-03");
+            dao.create("Автобус", "Никитич", "Владимирович", "+375-29-887-99-76", "1991-11-03");
 
             // dao.delete(15);
 
-            dao.update(5, "Александр", "Китарович", "Иванович", "+375-33-999-88-77", "1990-05-15");
+            dao.update(19, "Анатолий", "Терентий", "Иванович", "+375-33-999-88-77", "1990-05-15");
 
-        }catch (SQLException e) {
-            System.out.println("ошибка" + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("ошибка: " + e.getMessage());
         }
     }
 }
