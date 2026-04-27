@@ -1,4 +1,6 @@
-package phonedirectory;
+package com.yato.phonedirectory.dao;
+
+import com.yato.phonedirectory.entity.Contact;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -15,7 +17,7 @@ public class ContactDao {
         this.conn = DriverManager.getConnection(url, user, password);
     }
 
-    public List<Contact> getAll() {
+    public List<Contact> findAll() {
         List<Contact> contacts = new ArrayList<>();
         String sql = "SELECT * FROM contacts ORDER BY last_name, first_name, middle_name";
 
@@ -41,7 +43,7 @@ public class ContactDao {
         return contacts;
     }
 
-    public Contact getById(Integer id) {
+    public Contact findById(Integer id) {
         String sql = "SELECT * FROM contacts WHERE id = ?";
         Contact contact = null;
 

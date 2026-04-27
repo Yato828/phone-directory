@@ -1,9 +1,10 @@
-package phonedirectory;
+package com.yato.phonedirectory;
+
+import com.yato.phonedirectory.dao.ContactDao;
+import com.yato.phonedirectory.entity.Contact;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +12,7 @@ public class Main {
         try {
             ContactDao dao = new ContactDao();
 
-            List<Contact> contacts = dao.getAll();
+            List<Contact> contacts = dao.findAll();
 
             for (Contact contact : contacts) {
                 System.out.println(contact);

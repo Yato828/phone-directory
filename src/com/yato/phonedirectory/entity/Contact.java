@@ -1,4 +1,4 @@
-package phonedirectory;
+package com.yato.phonedirectory.entity;
 
 public class Contact {
     private Integer id;
