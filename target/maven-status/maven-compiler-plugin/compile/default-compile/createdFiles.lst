@@ -1,0 +1,4 @@
+com/yato/phonedirectory/servlet/MyServlet.class
+com/yato/phonedirectory/dao/ContactDao.class
+com/yato/phonedirectory/entity/Contact.class
+com/yato/phonedirectory/Main.class
