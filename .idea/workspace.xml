@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="maven packege added">
-      <change beforePath="$PROJECT_DIR$/lib/postgresql-42.7.9.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/phone-directory-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/phone-directory-1.0-SNAPSHOT.jar" afterDir="false" />
+    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="gitignore updated">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,7 +102,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777381956954</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lib deleted">
+      <option name="closed" value="true" />
+      <created>1777382292451</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1777382292451</updated>
+    </task>
+    <task id="LOCAL-00006" summary="gitignore updated">
+      <option name="closed" value="true" />
+      <created>1777382543640</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1777382543640</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,7 +127,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/yato/phonedirectory/Main.java&#10;#&#9;src/main/java/com/yato/phonedirectory/dao/ContactDao.java&#10;#&#9;src/main/java/com/yato/phonedirectory/entity/Contact.java" />
     <MESSAGE value="maven packege added" />
-    <option name="LAST_COMMIT_MESSAGE" value="maven packege added" />
+    <MESSAGE value="lib deleted" />
+    <MESSAGE value="gitignore updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
