@@ -13,3 +13,4 @@
 /build
 /outtarget/
 target/
+.DS_Store
