@@ -22,7 +22,7 @@ public class Main {
 
             // dao.delete(15);
 
-            dao.update(19, "Анатолий", "Терентий", "Иванович", "+375-33-999-88-77", "1990-05-15");
+            //dao.update(19, "Анатолий", "Терентий", "Иванович", "+375-33-999-88-77", "1990-05-15");
 
         } catch (SQLException e) {
             System.out.println("ошибка: " + e.getMessage());

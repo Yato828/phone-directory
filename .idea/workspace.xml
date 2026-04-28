@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="maven packege added" />
+    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="maven packege added">
+      <change beforePath="$PROJECT_DIR$/lib/postgresql-42.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/phone-directory-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/phone-directory-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -83,13 +87,22 @@
       <option name="project" value="LOCAL" />
       <updated>1777381745607</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="maven packege added">
+      <option name="closed" value="true" />
+      <created>1777381956954</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777381956954</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/com/yato/phonedirectory/Main.java&#10;#&#9;src/main/java/com/yato/phonedirectory/dao/ContactDao.java&#10;#&#9;src/main/java/com/yato/phonedirectory/entity/Contact.java" />
     <MESSAGE value="maven packege added" />
     <option name="LAST_COMMIT_MESSAGE" value="maven packege added" />
   </component>
