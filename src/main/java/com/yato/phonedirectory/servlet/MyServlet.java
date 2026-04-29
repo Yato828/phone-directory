@@ -22,9 +22,16 @@ public class MyServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
-        try {
+        String deleteId = request.getParameter("delete");
+        ContactDao dao = null;
 
-            ContactDao dao = new ContactDao();
+        try {
+             dao = new ContactDao();
+            if(deleteId != null) {
+                int Id = Integer.parseInt(deleteId);
+                dao.delete(Id);
+                out.println("<h3>Контакт с Id" + Id + "</h3>");
+            }
             List<Contact> contacts = dao.findAll();
 
             out.println("<html><body>");
@@ -40,6 +47,7 @@ public class MyServlet extends HttpServlet {
                 out.println("<td>" + c.getMiddleName() + "</td>");
                 out.println("<td>" + c.getPhone() + "</td>");
                 out.println("<td>" + c.getBirth() + "</td>");
+                out.println("<td><a href='?delete=" + c.getId() + "'>❌</a></td>");
                 out.println("</tr>");
             }
 
@@ -50,6 +58,15 @@ public class MyServlet extends HttpServlet {
             out.println("Driver not found: " + e.getMessage());
         } catch (SQLException e) {
             out.println("SQL error: " + e.getMessage());
+        }finally {
+            if(dao != null){
+                try{
+                    dao.close();
+                }catch (SQLException e) {
+                out.println("ошибка закрытия конекшена " + e.getMessage());
+                }
+
+            }
         }
     }
 }

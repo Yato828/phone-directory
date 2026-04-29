@@ -14,9 +14,7 @@ public class ContactDao {
     private final Connection conn;
 
     public ContactDao() throws SQLException, ClassNotFoundException {
-
         Class.forName("org.postgresql.Driver");
-
         this.conn = DriverManager.getConnection(url, user, password);
     }
 
@@ -28,7 +26,30 @@ public class ContactDao {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                Contact contact = new Contact(
+                contacts.add(new Contact(
+                        rs.getInt("id"),
+                        rs.getString("first_name"),
+                        rs.getString("last_name"),
+                        rs.getString("middle_name"),
+                        rs.getString("phone"),
+                        rs.getString("birth_date")
+                ));
+            }
+        }
+
+        return contacts;
+    }
+
+    public Contact findById(Integer id) throws SQLException {
+        String sql = "SELECT * FROM contacts WHERE id = ?";
+        Contact contact = null;
+
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+                contact = new Contact(
                         rs.getInt("id"),
                         rs.getString("first_name"),
                         rs.getString("last_name"),
@@ -36,43 +57,13 @@ public class ContactDao {
                         rs.getString("phone"),
                         rs.getString("birth_date")
                 );
-                contacts.add(contact);
             }
-
-        } catch (SQLException e) {
-            System.out.println("Ошибка: " + e.getMessage());
-        }
-
-        return contacts;
-    }
-
-    public Contact findById(Integer id) {
-        String sql = "SELECT * FROM contacts WHERE id = ?";
-        Contact contact = null;
-
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, id);
-            ResultSet resultSet = pstmt.executeQuery();
-
-            if (resultSet.next()) {
-                contact = new Contact(
-                        resultSet.getInt("id"),
-                        resultSet.getString("first_name"),
-                        resultSet.getString("last_name"),
-                        resultSet.getString("middle_name"),
-                        resultSet.getString("phone"),
-                        resultSet.getString("birth_date")
-                );
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Ошибка: " + e.getMessage());
         }
 
         return contact;
     }
 
-    public void create(String firstName, String lastName, String middleName, String phone, String birthDate) {
+    public void create(String firstName, String lastName, String middleName, String phone, String birthDate) throws SQLException {
         String sql = "INSERT INTO contacts (first_name, last_name, middle_name, phone, birth_date) VALUES (?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -81,31 +72,20 @@ public class ContactDao {
             pstmt.setString(3, middleName);
             pstmt.setString(4, phone);
             pstmt.setString(5, birthDate);
-
-            int rowsInserted = pstmt.executeUpdate();
-
-            if (rowsInserted > 0) {
-                System.out.println("Контакт добавлен!");
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Ошибка: " + e.getMessage());
+            pstmt.executeUpdate();
         }
     }
 
-    public void delete(Integer id) {
+    public void delete(Integer id) throws SQLException {
         String sql = "DELETE FROM contacts WHERE id = ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, id);
-            int rowsDeleted = pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            System.out.println("Ошибка: " + e.getMessage());
+            pstmt.executeUpdate();
         }
     }
 
-    public void update(int id, String firstName, String lastName, String middleName, String phone, String birthDate) {
+    public void update(int id, String firstName, String lastName, String middleName, String phone, String birthDate) throws SQLException {
         String sql = "UPDATE contacts SET first_name = ?, last_name = ?, middle_name = ?, phone = ?, birth_date = ? WHERE id = ?";
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -116,14 +96,12 @@ public class ContactDao {
             pstmt.setString(5, birthDate);
             pstmt.setInt(6, id);
             pstmt.executeUpdate();
-
-        } catch (SQLException e) {
-            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 
     public void close() throws SQLException {
-        conn.close();
+        if (conn != null && !conn.isClosed()) {
+            conn.close();
+        }
     }
-
 }
