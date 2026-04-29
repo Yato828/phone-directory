@@ -24,7 +24,7 @@ public class Main {
 
             //dao.update(19, "Анатолий", "Терентий", "Иванович", "+375-33-999-88-77", "1990-05-15");
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             System.out.println("ошибка: " + e.getMessage());
         }
     }

@@ -13,11 +13,14 @@ public class ContactDao {
     private static final String password = "";
     private final Connection conn;
 
-    public ContactDao() throws SQLException {
+    public ContactDao() throws SQLException, ClassNotFoundException {
+
+        Class.forName("org.postgresql.Driver");
+
         this.conn = DriverManager.getConnection(url, user, password);
     }
 
-    public List<Contact> findAll() {
+    public List<Contact> findAll() throws SQLException {
         List<Contact> contacts = new ArrayList<>();
         String sql = "SELECT * FROM contacts ORDER BY last_name, first_name, middle_name";
 
@@ -122,4 +125,5 @@ public class ContactDao {
     public void close() throws SQLException {
         conn.close();
     }
+
 }

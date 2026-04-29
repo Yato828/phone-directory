@@ -17,14 +17,12 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
 
         try {
-            // ПРИНУДИТЕЛЬНАЯ ЗАГРУЗКА ДРАЙВЕРА
-            Class.forName("org.postgresql.Driver");
 
             ContactDao dao = new ContactDao();
             List<Contact> contacts = dao.findAll();
