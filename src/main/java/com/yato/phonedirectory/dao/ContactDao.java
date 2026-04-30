@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ContactDao {
 
-    private static final String url = "jdbc:postgresql://localhost:5432/contactsdb";
+    private static final String url = "jdbc:postgresql://localhost:5432/contactsdb?useUnicode=true&characterEncoding=UTF-8";
     private static final String user = "yato";
     private static final String password = "";
     private final Connection conn;

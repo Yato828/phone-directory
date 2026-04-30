@@ -16,4 +16,15 @@
         <servlet-name>MyServlet</servlet-name>
         <url-pattern>/contact</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddServlet</servlet-name>
+        <servlet-class>com.yato.phonedirectory.servlet.AddServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    
 </web-app>

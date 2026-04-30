@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="sql driver was moved to dao">
+    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="code refactoring + delete user function">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/AddServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/dao/ContactDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/dao/ContactDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/MyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/MyServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +169,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777469517304</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="code refactoring + delete user function">
+      <option name="closed" value="true" />
+      <created>1777480755102</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1777480755102</updated>
+    </task>
+    <task id="LOCAL-00014" summary="code refactoring + delete user function">
+      <option name="closed" value="true" />
+      <created>1777480776541</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1777480776541</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +201,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="db is on web-site" />
     <MESSAGE value="sql driver was moved to dao" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql driver was moved to dao" />
+    <MESSAGE value="code refactoring + delete user function" />
+    <option name="LAST_COMMIT_MESSAGE" value="code refactoring + delete user function" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
