@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="code refactoring + delete user function">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/AddServlet.java" afterDir="false" />
+    <list default="true" id="1614b7ae-614d-4a2f-be3f-09dd53fa5485" name="Changes" comment="add new contact function">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/EditServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/dao/ContactDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/dao/ContactDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/MyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yato/phonedirectory/servlet/MyServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
@@ -185,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777480776541</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add new contact function">
+      <option name="closed" value="true" />
+      <created>1777563186717</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1777563186717</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +209,8 @@
     <MESSAGE value="db is on web-site" />
     <MESSAGE value="sql driver was moved to dao" />
     <MESSAGE value="code refactoring + delete user function" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactoring + delete user function" />
+    <MESSAGE value="add new contact function" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new contact function" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -48,6 +48,7 @@ public class MyServlet extends HttpServlet {
                 out.println("<td>" + c.getMiddleName() + "</td>");
                 out.println("<td>" + c.getPhone() + "</td>");
                 out.println("<td>" + c.getBirth() + "</td>");
+                out.println("<td><a href='/phone-directory/edit?id=" + c.getId() + "'>✏️</a></td>");
                 out.println("<td><a href='?delete=" + c.getId() + "'>❌</a></td>");
                 out.println("</tr>");
             }
