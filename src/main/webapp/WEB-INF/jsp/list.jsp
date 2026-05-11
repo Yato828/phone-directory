@@ -7,13 +7,6 @@
 <body>
 <h1>Список контактов</h1>
 
-<c:if test="${not empty param.message}">
-    <p style="color: green;">${param.message}</p>
-</c:if>
-<c:if test="${not empty param.error}">
-    <p style="color: red;">Ошибка</p>
-</c:if>
-
 <table border="1">
     <thead>
         <tr>
