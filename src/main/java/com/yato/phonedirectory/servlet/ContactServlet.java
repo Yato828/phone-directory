@@ -4,12 +4,13 @@ import com.yato.phonedirectory.dao.ContactDao;
 import com.yato.phonedirectory.entity.Contact;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-
+    @WebServlet("/contact")
 public class ContactServlet extends HttpServlet {
 
     @Override
@@ -30,12 +31,8 @@ public class ContactServlet extends HttpServlet {
                 }
                 request.setAttribute("contact", contact);
                 request.setAttribute("action", "edit");
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace();
-                response.sendRedirect(request.getContextPath() + "/contacts?error=db");
-                return;
-            } catch (NumberFormatException e) {
-                response.sendRedirect(request.getContextPath() + "/contacts");
+            } catch (SQLException | ClassNotFoundException | NumberFormatException e) {
+                        e.printStackTrace();
                 return;
             } finally {
                 if (dao != null) {
@@ -74,17 +71,14 @@ public class ContactServlet extends HttpServlet {
                 // Обновление
                 int id = Integer.parseInt(idParam);
                 dao.update(id, firstName, lastName, middleName, phone, birthDate);
-                response.sendRedirect(request.getContextPath() + "/contacts?message=updated");
+                response.sendRedirect(request.getContextPath() + "/contacts");
             } else {
 
                 dao.create(firstName, lastName, middleName, phone, birthDate);
-                response.sendRedirect(request.getContextPath() + "/contacts?message=added");
+                response.sendRedirect(request.getContextPath() + "/contacts");
             }
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/contacts?error=db");
-        } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/contacts?error=invalid_id");
+        } catch (SQLException | ClassNotFoundException | NumberFormatException e) {
+                    e.printStackTrace();
         } finally {
             if (dao != null) {
                 try {
