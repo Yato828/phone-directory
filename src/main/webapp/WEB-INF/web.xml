@@ -8,23 +8,23 @@
     <display-name>Phone Directory</display-name>
 
     <servlet>
-        <servlet-name>AllServlet</servlet-name>
-        <servlet-class>com.yato.phonedirectory.servlet.AllServlet</servlet-class>
+        <servlet-name>ContactsServlet</servlet-name>
+        <servlet-class>com.yato.phonedirectory.servlet.ContactsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>AllServlet</servlet-name>
-        <url-pattern>/all</url-pattern>
+        <servlet-name>ContactsServlet</servlet-name>
+        <url-pattern>/contacts</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>FormServlet</servlet-name>
-        <servlet-class>com.yato.phonedirectory.servlet.FormServlet</servlet-class>
+        <servlet-name>ContactServlet</servlet-name>
+        <servlet-class>com.yato.phonedirectory.servlet.ContactServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>FormServlet</servlet-name>
-        <url-pattern>/form</url-pattern>
+        <servlet-name>ContactServlet</servlet-name>
+        <url-pattern>/contact</url-pattern>
     </servlet-mapping>
 
 </web-app>

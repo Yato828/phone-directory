@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class FormServlet extends HttpServlet {
+public class ContactServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,17 +25,17 @@ public class FormServlet extends HttpServlet {
                 int id = Integer.parseInt(idParam);
                 Contact contact = dao.findById(id);
                 if (contact == null) {
-                    response.sendRedirect(request.getContextPath() + "/all");
+                    response.sendRedirect(request.getContextPath() + "/contacts");
                     return;
                 }
                 request.setAttribute("contact", contact);
                 request.setAttribute("action", "edit");
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
-                response.sendRedirect(request.getContextPath() + "/all?error=db");
+                response.sendRedirect(request.getContextPath() + "/contacts?error=db");
                 return;
             } catch (NumberFormatException e) {
-                response.sendRedirect(request.getContextPath() + "/all");
+                response.sendRedirect(request.getContextPath() + "/contacts");
                 return;
             } finally {
                 if (dao != null) {
@@ -51,7 +51,7 @@ public class FormServlet extends HttpServlet {
             request.setAttribute("action", "add");
         }
 
-        request.getRequestDispatcher("/WEB-INF/jsp/form.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/contact.jsp").forward(request, response);
     }
 
     @Override
@@ -74,17 +74,17 @@ public class FormServlet extends HttpServlet {
                 // Обновление
                 int id = Integer.parseInt(idParam);
                 dao.update(id, firstName, lastName, middleName, phone, birthDate);
-                response.sendRedirect(request.getContextPath() + "/all?message=updated");
+                response.sendRedirect(request.getContextPath() + "/contacts?message=updated");
             } else {
 
                 dao.create(firstName, lastName, middleName, phone, birthDate);
-                response.sendRedirect(request.getContextPath() + "/all?message=added");
+                response.sendRedirect(request.getContextPath() + "/contacts?message=added");
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/all?error=db");
+            response.sendRedirect(request.getContextPath() + "/contacts?error=db");
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/all?error=invalid_id");
+            response.sendRedirect(request.getContextPath() + "/contacts?error=invalid_id");
         } finally {
             if (dao != null) {
                 try {

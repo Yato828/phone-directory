@@ -21,13 +21,13 @@
             <td>${c.middleName}</td>
             <td>${c.phone}</td>
             <td>${c.birth}</td>
-            <td><a href="/phone-directory/form?id=${c.id}">✏️</a></td>
-            <td><a href="/phone-directory/all?delete=${c.id}">❌</a></td>
+            <td><a href="/phone-directory/contact?id=${c.id}">✏️</a></td>
+            <td><a href="/phone-directory/contacts?delete=${c.id}">❌</a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <br/>
-<a href="/phone-directory/form">➕ Добавить контакт</a>
+<a href="/phone-directory/contact">➕ Добавить контакт</a>
 </body>
 </html>
